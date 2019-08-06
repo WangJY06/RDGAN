@@ -7,7 +7,7 @@ Pictures taken under the low-light condition often suffer from low contrast and 
 ### Citation
 ```
 [1]  @inproceedings{RDGAN,
-         author = {Junyi Wang, Weimin Tan, Xuejing Niu, and Bo Yan},
+         author = {Junyi Wang and Weimin Tan and Xuejing Niu and Bo Yan},
          title = {RDGAN: Retinex Decomposition based Adversarial Learning for Low-Light Enhancement},
          booktitle = {ICME},
          year = {2019}
