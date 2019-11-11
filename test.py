@@ -1,4 +1,4 @@
-# CUDA_VISIBLE_DEVICES=0 python test.py
+# CUDA_VISIBLE_DEVICES=2 python test.py
 import numpy as np
 import tensorflow as tf
 import tensorlayer as tl
@@ -6,13 +6,17 @@ import os, time
 from model import *
 from PIL import Image
 
-in_dir = 'samples/'
+in_dir = '../disk1/input_ex/'
 out_dir = 'out/'
 rd_dir = 'rd_model/'
 fe_dir = 'fe_model/'
 
 def main():
     tf.reset_default_graph()
+    config = tf.ConfigProto()
+    config.gpu_options.allow_growth = True
+    sess = tf.Session(config=config)
+    
     img_holder = tf.placeholder(tf.float32, shape=[None, None, 3])
     hei = tf.placeholder(tf.int32)
     wid = tf.placeholder(tf.int32)
@@ -26,14 +30,7 @@ def main():
     img_crm = CRM(img, img_i)
     
     out = fenet(img_crm, img, img_r, hei, wid)
-    out = tf.clip_by_value(out, 0, 1)
-    out = out[0, :, :, :]
-    
-    config = tf.ConfigProto()
-    config.gpu_options.allow_growth = True
-    sess = tf.Session(config=config)
-    init_op = [tf.global_variables_initializer(), tf.local_variables_initializer()]
-    sess.run(init_op)
+    out = tf.clip_by_value(out, 0, 1)[0]
     
     print('Loading...')
     ckpt = tf.train.latest_checkpoint(rd_dir)
@@ -62,14 +59,15 @@ def main():
         start_time = time.time()
         out_img = sess.run(out, feed_dict={img_holder:in_img, hei:h, wid:w})
         duration = float(time.time() - start_time)
-        avg_time += duration
+        if img_id > 1:
+            avg_time += duration
         
         out_name = img_file.split('.', 1)[0] + '.png'
         out_img = Image.fromarray(np.uint8(out_img * 255))
         out_img.save(out_dir+out_name)
         print('step: %d/%d, time: %.2f sec' % (img_id, img_num, duration))
     
-    print('Finish! avg_time: %.2f sec' % (avg_time / img_num))
+    print('Finish! avg_time: %.2f sec' % (avg_time / (img_num-1)))
     sess.close()
 
 if __name__ == '__main__':
