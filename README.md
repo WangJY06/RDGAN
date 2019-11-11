@@ -12,7 +12,10 @@ Pictures taken under the low-light condition often suffer from low contrast and 
 ## 3. Low-Light Enhancement Results
 ![Image of Results](figs/result.png)
 
-## 4. Citation
+## 4. Testing
+Run the [test.py](test.py) for results.
+
+## 5. Citation
 ```
 @inproceedings{RDGAN,
     author = {Wang, Junyi and Tan, Weimin and Niu, Xuejing and Yan, Bo},
