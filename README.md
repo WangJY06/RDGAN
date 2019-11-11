@@ -12,15 +12,18 @@ Pictures taken under the low-light condition often suffer from low contrast and 
 ## 3. Testing
 Run the [test.py](test.py) for results.
 
-## 4. Low-Light Enhancement Results
+## 4. Retinex Decomposition Comparison
+![Image of RD](figs/rd.png)
+
+## 5. Low-Light Enhancement Results
 ![Image of Results](figs/result.png)
 
-## 5. Dataset
+## 6. Dataset
 Following [SICE](https://github.com/csjcai/SICE).
 
 See other testing images in the folder [samples_sup](samples_sup).
 
-## 6. Citation
+## 7. Citation
 ```
 @inproceedings{RDGAN,
     author = {Wang, Junyi and Tan, Weimin and Niu, Xuejing and Yan, Bo},
