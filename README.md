@@ -9,13 +9,17 @@ Pictures taken under the low-light condition often suffer from low contrast and 
 ## 2. Network Structure
 ![Image of Network](figs/model.png)
 
-## 3. Low-Light Enhancement Results
-![Image of Results](figs/result.png)
-
-## 4. Testing
+## 3. Testing
 Run the [test.py](test.py) for results.
 
-## 5. Citation
+## 4. Low-Light Enhancement Results
+![Image of Results](figs/result.png)
+
+## 5. Dataset
+Following [SICE](https://github.com/csjcai/SICE).
+See other testing images in the folder [samples_sup](samples_sup).
+
+## 6. Citation
 ```
 @inproceedings{RDGAN,
     author = {Wang, Junyi and Tan, Weimin and Niu, Xuejing and Yan, Bo},
