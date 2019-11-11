@@ -6,7 +6,7 @@ import os, time
 from model import *
 from PIL import Image
 
-in_dir = '../disk1/input_ex/'
+in_dir = 'samples/'
 out_dir = 'out/'
 rd_dir = 'rd_model/'
 fe_dir = 'fe_model/'
