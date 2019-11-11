@@ -12,18 +12,18 @@ Pictures taken under the low-light condition often suffer from low contrast and 
 ![Image of Network](figs/model.png)
 
 ## 3. Testing
-Run the [test.py](test.py) for results.
+Run [test.py](test.py) for results.
 
 ## 4. Retinex Decomposition Comparison
 ![Image of RD](figs/rd.png)
 
-## 5. Low-Light Enhancement Results
+## 5. Low-Light Enhancement Comparison
 ![Image of Results](figs/result.png)
 
 ## 6. Dataset
 Following [SICE](https://github.com/csjcai/SICE).
 
-See other testing images in the folder [samples_sup](samples_sup).
+See more testing images in the folder [samples_sup](samples_sup).
 
 ## 7. Citation
 ```
