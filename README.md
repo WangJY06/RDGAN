@@ -27,10 +27,12 @@ See more testing images in the folder [samples_sup](samples_sup).
 
 ## 7. Citation
 ```
-@inproceedings{RDGAN,
-    author = {Wang, Junyi and Tan, Weimin and Niu, Xuejing and Yan, Bo},
-    title = {RDGAN: Retinex Decomposition based Adversarial Learning for Low-Light Enhancement},
-    booktitle = {IEEE International Conference on Multimedia and Expo (ICME)},
-    year = {2019}
+@inproceedings{wang2019rdgan,
+  title={RDGAN: Retinex Decomposition Based Adversarial Learning for Low-Light Enhancement},
+  author={Wang, Junyi and Tan, Weimin and Niu, Xuejing and Yan, Bo},
+  booktitle={2019 IEEE International Conference on Multimedia and Expo (ICME)},
+  pages={1186--1191},
+  year={2019},
+  organization={IEEE}
 }
 ```
