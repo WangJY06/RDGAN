@@ -1,4 +1,3 @@
-# CUDA_VISIBLE_DEVICES=2 python test.py
 import numpy as np
 import tensorflow as tf
 import tensorlayer as tl
@@ -30,7 +29,7 @@ def main():
     img_crm = CRM(img, img_i)
     
     out = fenet(img_crm, img, img_r, hei, wid)
-    out = tf.clip_by_value(out, 0, 1)[0]
+    out = tf.clip_by_value(out[0], 0, 1)
     
     print('Loading...')
     ckpt = tf.train.latest_checkpoint(rd_dir)
@@ -67,7 +66,7 @@ def main():
         out_img.save(out_dir+out_name)
         print('step: %d/%d, time: %.2f sec' % (img_id, img_num, duration))
     
-    print('Finish! avg_time: %.2f sec' % (avg_time / (img_num-1)))
+    print('Finish! Avg time: %.2f sec' % (avg_time / (img_num-1)))
     sess.close()
 
 if __name__ == '__main__':
